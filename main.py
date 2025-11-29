@@ -1,8 +1,13 @@
+import sys
 from stats import get_sorted_list
 from stats import get_word_count
 
 def main():
-    book_directory = "books/frankenstein.txt" 
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+        
+    book_directory = sys.argv[1]
 
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {book_directory}...")
